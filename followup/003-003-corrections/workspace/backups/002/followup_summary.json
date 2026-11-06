@@ -1,0 +1,45 @@
+{
+  "instruction_summary": "Study 002 (theory-update): fit Besley-Persson's legal-fiscal complementarity (Figure 1) by era 1975-2000/2000-2012/2012-2024 (Q1), reconcile the paper's three determinants with successor composite capacity measures Hanson-Sigman/V-Dem/mcollective16 under the 001 X0 spec (Q2), and extend DP16256's trade-tax-dependence fact to 2023 on GRD 2025 (Q3). Branch R; reuses 001's frame_update.csv read-only.",
+  "completed": true,
+  "steps": [
+    {"description": "Rebuild venv (replication venv gone) + sha256 verify all 57 staged files", "command": "uv venv /workspace/.venv --python 3.12; uv pip install pandas numpy statsmodels pyreadstat openpyxl matplotlib scipy; sha256sum -c sha256sums.txt", "exit_code": 0, "outputs": ["57/57 OK"]},
+    {"description": "Block A gates: locate 001 frame (reuse), GRD concept check, Q2 coverage-count gate, Q1 slope-diff method choice (stacked, written before Block B)", "command": "python -I code/gates_002.py", "exit_code": 0, "outputs": ["results/gates.json", "workspace/data/frame_with_mcollective.csv", "workspace/checkpoints/A.done"]},
+    {"description": "Block B constructions 1-3: complementarity-by-era (Q1), successor reconciliation (Q2), trade-tax march (Q3); OLS+HC1; stacked slope-diff test; verdicts", "command": "python -I code/estimate_002.py", "exit_code": 0, "outputs": ["results/complementarity_by_era.csv", "results/successor_reconciliation.csv", "results/tradetax_march.csv", "results/verdicts.json", "workspace/checkpoints/B1.done", "B2.done", "B3.done"]},
+    {"description": "Block B construction 4: figures (complementarity trajectory with Fisher 95% CI; trade-tax march vs DP16256 vintage)", "command": "python -I code/figures_002.py", "exit_code": 0, "outputs": ["results/fig_complementarity_eras.png", "results/fig_tradetax_march.png", "workspace/checkpoints/B4.done"]},
+    {"description": "Block C: findings.md, report.md, result_card.json, followup_summary.json", "command": "(authoring)", "exit_code": 0, "outputs": ["results/findings.md", "report.md", "result_card.json", "followup_summary.json"]}
+  ],
+  "key_results": {
+    "Q1_complementarity_trajectory": "stable (common N=148; E2 slope positive -> not rotated; stacked E2-vs-E0 slope diff -0.000259, HC1 p=0.220 -> not significant)",
+    "Q1_std_slopes_r_common_pooled": "E0 0.50, E1 0.64, E2 0.52 (positive & significant all eras; high half drives it, low half weaker)",
+    "Q2_R-legor_German_Scandinavian": "persists on both verdicted composites (Hanson-Sigman, V-Dem property) - most durable determinant",
+    "Q2_R-war": "weakens on both composites (HS p=0.089, V-Dem p=0.73)",
+    "Q2_R-parl": "weakens on both composites",
+    "Q2_mcollective16": "not separable (coverage): merged N=63, index N=67 < 80 floor; descriptive-only (descr. war p=0.011, legal origin p=0.002/0.014)",
+    "Q3_tradetax_counts": "27 (2000) -> 15 (2010) -> 6 (2023); direction-only grade (2010=15 vs DP16256's 7 -> vintage mismatch); decline continues, 2023 level below DP16256's 2010 level of 7",
+    "gates": "A1 sha 57/57 OK; A2 reuse frame; A3 GRD concept OK; A4 coverage HS=133/VDem=134 verdicted, mcollective16=63 not separable; A5 Q1 method=stacked (pre-Block-B)"
+  },
+  "comparison_to_original": [
+    {"quantity": "Legal-fiscal complementarity (Figure 1 substance)", "original": "'still holds up' on a 2010 cross-section (qualitative)", "followup": "stable across 1975-2024: std slope r 0.50/0.64/0.52, E2-vs-E0 diff p=0.220", "source_file": "DP16256 (2021) Figure-1 re-exam (extension-assets/literature/besley-persson-dann-2021-dp16256.pdf)", "note": "first era-by-era fit; confirms and quantifies the update's qualitative claim"},
+    {"quantity": "R-legor (German+Scandinavian) on capacity", "original": "persists on the paper's own battery (X1 between: German 7/8, Scand 8/8)", "followup": "persists on Hanson-Sigman (p=1.6e-10/1.7e-24) and V-Dem property (p=1.7e-4/3.0e-6)", "source_file": "/workspace/eval/followup/001-001-living-update/results/findings.md (scorecard)", "note": "most durable determinant, reconfirmed on successor composites"},
+    {"quantity": "R-war on capacity", "original": "persists between / weakens within on the paper's battery (001, X1)", "followup": "weakens on both composites (HS p=0.089; V-Dem p=0.73)", "source_file": "/workspace/eval/followup/001-001-living-update/results/findings.md", "note": "composites weight bureaucratic/information capacity the paper's narrow outcomes do not"},
+    {"quantity": "Countries with trade-tax share > 40%, year 2010", "original": "7", "followup": "15", "source_file": "DP16256 (2021) Figure 7 (printed, via staged PDF)", "note": "outside +/-3 -> vintage mismatch -> Q3 graded direction-only; gap is vintage not concept (all denominators give 14-15)"},
+    {"quantity": "Countries with trade-tax share > 40%, year 2023", "original": "not reported (DP16256 stops at 2010)", "followup": "6", "source_file": "results/tradetax_march.csv (GRD 2025)", "note": "new extension; 2023 level sits below DP16256's own 2010 level of 7 - the march continues"}
+  ],
+  "artifacts": [
+    "results/gates.json",
+    "results/complementarity_by_era.csv",
+    "results/successor_reconciliation.csv",
+    "results/tradetax_march.csv",
+    "results/verdicts.json",
+    "results/fig_complementarity_eras.png",
+    "results/fig_tradetax_march.png",
+    "results/findings.md"
+  ],
+  "deviations": [
+    "mcollective16 graded 'not separable (coverage)': merged estimation N=63 (index non-missing set N=67, DP16256's full set) < the 001 G5 N>=80 floor; reported descriptively with N stated on every surface, per pre-declared spec II.1(2). No substitution of the coll_cap panel mean (would change the construct).",
+    "Q3 graded direction-only: GRD 2025 gives 15 trade-tax-dependent countries in 2010 vs DP16256's 7 (outside +/-3), so the reproduce-then-extend rule reports the vintage mismatch and grades the 2023 count by direction only. Pre-named outcome, not a failure; the gap is a vintage difference (every tax denominator gives 14-15 in 2010), not a concept choice.",
+    "Replication venv was absent (containers recreated between sessions); rebuilt a fresh uv venv (Python 3.12) with the packages the steps import. No installed_packages.txt existed on disk under /workspace/eval/replication/.",
+    "Branch R (deposit pending): suspect cells carry pending-deposit; no printed typo adjudicated and no suspect-cell stars used as evidence (study 002 does not touch that surface)."
+  ],
+  "remaining": []
+}

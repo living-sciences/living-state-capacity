@@ -1,0 +1,84 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "Besley-Persson's legal-fiscal complementarity is STABLE across 1975-2024 (standardized slope r 0.50/0.64/0.52 by era, E2-vs-E0 difference not significant, p=0.22); legal origin PERSISTS as the most durable determinant on successor capacity measures while war and parliamentary democracy WEAKEN, and the move away from trade taxation continues to 6 countries in 2023 (below the update's 2010 count of 7).",
+  "status": "completed",
+  "metrics": [
+    {
+      "label": "Q1 complementarity trajectory",
+      "value": "stable (r 0.50/0.64/0.52, E0/E1/E2)",
+      "baseline": "'still holds up' on 2010 cross-section (qualitative)",
+      "baseline_label": "DP16256 (2021) Figure-1 re-examination",
+      "note": "common sample N=148; E2 slope positive (not rotated); stacked E2-vs-E0 slope diff p=0.22 (not significant)"
+    },
+    {
+      "label": "Q2 R-legor (German+Scandinavian)",
+      "value": "persists on both composites",
+      "baseline": "persists on the paper's own battery (001)",
+      "baseline_label": "001 scorecard (AER T1/T2 successors)",
+      "note": "Hanson-Sigman p=1.6e-10/1.7e-24; V-Dem property p=1.7e-4/3.0e-6 - most durable determinant"
+    },
+    {
+      "label": "Q2 R-war on successor composites",
+      "value": "weakens (HS p=0.089, V-Dem p=0.73)",
+      "baseline": "persists between / weakens within (001, X1)",
+      "baseline_label": "001 findings (paper's battery)",
+      "note": "composites weight bureaucratic/information capacity the paper's narrow outcomes do not"
+    },
+    {
+      "label": "Q3 trade-tax >40% count 2000/2010/2023",
+      "value": "27 / 15 / 6 (direction-only grade)",
+      "baseline": "~20 / 7 / - (DP16256 Fig 7)",
+      "baseline_label": "DP16256 (2021) Figure 7 (printed)",
+      "note": "2010=15 vs 7 -> vintage mismatch (every denominator gives 14-15), so graded direction-only; decline continues, 2023 below the update's 2010 level"
+    },
+    {
+      "label": "Gates (Block A)",
+      "value": "sha 57/57; HS/V-Dem verdicted, mcollective16 N=67 not separable",
+      "baseline": "N>=80 coverage floor (001 G5)",
+      "baseline_label": "spec II.1(2) / 001 G5 rule",
+      "note": "Q1 slope-diff method = stacked, fixed before Block B"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Q2 successor reconciliation (V-between; V-within beside in CSV)",
+      "columns": ["Composite (N)", "R-war", "R-parl", "R-legor (Ger+Scand)"],
+      "rows": [
+        ["Hanson-Sigman 2000-2015 (133)", "weakens", "weakens", "persists"],
+        ["V-Dem property 2000-2025 (134)", "weakens", "weakens", "persists"],
+        ["mcollective16 (merged 63; index 67)", "not separable (coverage)", "not separable (coverage)", "not separable (coverage)"]
+      ],
+      "highlight_row": 2
+    },
+    {
+      "title": "Q1 complementarity by era (common sample N=148, pooled)",
+      "columns": ["Era", "slope (income-tax/GDP on credit)", "HC1 p", "std slope r"],
+      "rows": [
+        ["E0 1975-2000", "+0.000815", "1.6e-06", "0.50"],
+        ["E1 2000-2012", "+0.000743", "4.0e-12", "0.64"],
+        ["E2 2012-2024", "+0.000557", "7.9e-06", "0.52"]
+      ],
+      "highlight_row": 2
+    }
+  ],
+  "figures": [
+    {
+      "file": "results/fig_complementarity_eras.png",
+      "caption": "Legal-fiscal complementarity by era (common sample N=148): standardized slope (correlation r) of income-tax/GDP on private credit, pooled and within both income halves, with Fisher 95% CIs. Positive and significant in all three eras; peaks in E1 (2000-2012), stable E0/E2; carried by the high-income half, weaker in the low-income half. Era boundaries 2000/2012 are SPEC-CHOICE.",
+      "alt": "Point-and-error-bar plot over three eras; pooled correlation around 0.5-0.64 and always above zero; high-income-half points high, low-income-half points lower with the E2 low-half CI touching zero"
+    },
+    {
+      "file": "results/fig_tradetax_march.png",
+      "caption": "Fiscal-capacity march away from trade taxation (Q3): countries with trade tax > 40% of total taxes on GRD 2025 fall 27 (2000) -> 15 (2010) -> 6 (2023), orange. DP16256's 2021 vintage (blue, ~20 in 2000, 7 in 2010) runs lower at each date - a vintage difference - so 2023 is graded direction-only; the decline continues and 2023 sits below the update's 2010 level.",
+      "alt": "Line chart; orange GRD-2025 line declining 27-15-6 across 2000, 2010, 2023; dashed blue DP16256 line at 20 and 7 for 2000 and 2010, running below the orange line"
+    }
+  ],
+  "notes": [
+    "These are conditional cross-country correlations, exactly as the paper itself labels its evidence (pp. 1235, 1241); nothing here is causal, and no verdict below upgrades or downgrades the paper's causal claims, because it made none.",
+    "Branch R (reconstruction; openICPSR 113314 deposit pending the human gate): suspect cells carry pending-deposit; this study adjudicates no printed typo and uses no suspect-cell stars as evidence. Reuses study 001's frame_update.csv read-only.",
+    "mcollective16 (the authors' own 2021 collective-capacity index) is graded 'not separable (coverage)': merged estimation N=63, index non-missing set N=67 (DP16256's full set), below the N>=80 floor; reported descriptively with N stated. No substitution of the coll_cap panel mean (would change the construct).",
+    "Q3 reproduce-then-extend rule triggered: GRD 2025 gives 15 trade-tax-dependent countries in 2010 vs DP16256's 7 (outside +/-3), a vintage difference (every tax denominator gives 14-15), so the 2023 count is graded direction-only. Pre-named outcome, not a failure.",
+    "Novelty: the first re-estimation of the AER 2009 Tables 1-2 specification (external-war incidence 1816-1975 + democracy and parliamentary-democracy incidence to 1975 + legal origins, on the paper's outcome battery or its successors) on any post-publication data, and the first grading of those patterns out of sample (checked against the update's published do-files and dataset; literature search 2026-11-05). Adjacent work exists (DP16256 2021; Cardenas-Tuzemen 2011); only the narrow battery claim is asserted."
+  ],
+  "report_file": "report.md"
+}

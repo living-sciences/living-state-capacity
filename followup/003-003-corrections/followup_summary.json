@@ -1,0 +1,49 @@
+{
+  "instruction_summary": "Apply exactly the twelve bounded audit-conformance corrections to the two completed follow-up studies of Besley-Persson 2009 (001 living-update, 002 theory-update), editing their files in place, with no verdict word changes; log every old->new in results/card_corrections.csv.",
+  "completed": true,
+  "steps": [
+    {"description": "Read replication/audit artifacts, both studies' cards/reports/findings/summaries, and staged PDFs; rebuilt venv (replication venv gone)", "command": "uv venv /workspace/.venv; uv pip install pandas==3.1.1 numpy statsmodels==0.15 pyreadstat openpyxl matplotlib scipy pypdf", "exit_code": 0, "outputs": ["/workspace/.venv"]},
+    {"description": "001-C2/C5: read AER paper.pdf Tables 1-2 (pp.1237-1238) to verify printed war/parl cells and the T2 0.555*** star", "command": "pdftotext -layout -f 20 -l 22 /workspace/inputs/paper.pdf -", "exit_code": 0, "outputs": ["(verification)"]},
+    {"description": "001-C1: read WP nber_w13028_2007.pdf Tables 1-2 (pp.40-41, regional-FE spec) and fn17 (p.26) for the cross-check column", "command": "pdftotext -layout; pypdf", "exit_code": 0, "outputs": ["(verification)"]},
+    {"description": "001-C2: rewrote printed_AER block of anchors_printed.json (T1 war c3/c4, T2 war c1-c4 order, filled SEs, pending-deposit tags on T1c2 & T2c2)", "command": "edit anchors_printed.json; python -I json.load (valid)", "exit_code": 0, "outputs": ["001.../results/anchors_printed.json"]},
+    {"description": "001-C1/C3/C4/C6: filled WP cross-check column + reading note (findings.md); restored identification sentence (card note 5); carried X0-between into headline (card/findings/report); added pre-1950 read route + A4 (e_polity2 to 1789) line (findings.md)", "command": "edits + verify e_polity2 earliest year=1789 from vdem_core.csv", "exit_code": 0, "outputs": ["001.../results/findings.md","001.../result_card.json","001.../report.md","001.../followup_summary.json"]},
+    {"description": "001-C7: implemented R-legor pooled attenuation arm in verdicts.py and re-ran; all 16 scorecard verdict words unchanged; arm non-binding (X0-within atten=True but joint-persists fails)", "command": "python -I verdicts.py", "exit_code": 0, "outputs": ["001.../workspace/code/verdicts.py","001.../results/scorecard.csv"]},
+    {"description": "001-C8: added 'caveat'=descriptive(contemporaneous-war caveat) column to X2 rows of table1_update.csv (84) and table2_update.csv (56); numeric values preserved exactly", "command": "python -I line-append", "exit_code": 0, "outputs": ["001.../results/table1_update.csv","001.../results/table2_update.csv"]},
+    {"description": "002-C2: fixed half_label (drop missing-income from halves) in estimate_002.py and re-ran; E2 low-half common p 0.0736->0.0395; Q1 verdict unchanged (stable); regenerated complementarity figure", "command": "python -I estimate_002.py; python -I figures_002.py", "exit_code": 0, "outputs": ["002.../results/complementarity_by_era.csv","002.../results/verdicts.json","002.../results/fig_complementarity_eras.png"]},
+    {"description": "002-C1/C3/C4: era-by-era absence-framing (report.md + summary); SPEC-CHOICE era-boundary label on card M1; Q3 coverage sentence (116 vs 169) on report/findings/card; erratum + true low-half values filed", "command": "edits + json.load validation", "exit_code": 0, "outputs": ["002.../report.md","002.../results/findings.md","002.../result_card.json","002.../followup_summary.json"]},
+    {"description": "Built the two correction figures and wrote 003 deliverables", "command": "python -I (figures); write report/card/summary/card_corrections.csv", "exit_code": 0, "outputs": ["results/fig1_002C2_lowhalf_fix.png","results/fig2_001C7_legor_attenuation.png","results/card_corrections.csv","report.md","result_card.json","followup_summary.json"]}
+  ],
+  "key_results": {
+    "corrections_applied": "12/12 (001: C1-C8; 002: C1-C4)",
+    "verdict_words_changed": "0 (001 scorecard: all 16 identical; 002 Q1/Q2/Q3 unchanged)",
+    "001_C7_legor_attenuation": "non-binding: pooled German+Scandinavian median std beta 0.252/0.098/0.258/0.131 (X0b/X0w/X1b/X1w) vs half-anchor 0.099; only X0-within atten=True and that cell is mixed(split), so the persists clause never fires",
+    "001_C2_printed_fixes": "T1 war c3 0.598->0.029(0.209) ns; T1 war c4 null->0.576(0.170)***; T2 war reordered to 0.762/0.598/0.579/0.555 (all ***); SEs filled; T1c2 & T2c2 tagged pending-deposit",
+    "001_C1_WP_crosscheck": "filled from w13028 Tables 1-2 (regional-FE spec); corroborates merited stars on rows 2/3/8, printed-via-different-numbers on 5/6/7/9/10/11/12; fn17 WP also prints sd 0.73 (uncorrected); adjudication stays pending-deposit",
+    "002_C2_E2_lowhalf": "clean p=0.0395 (significant), n=71, r=0.2806 (was p=0.0736 marginal, n=77, r=0.2151); Q1 verdict unchanged (stable, pooled E2-vs-E0 p=0.220)",
+    "002_C4_coverage": "GRD 2025 2023 coverage 116 countries vs 169 in 2000"
+  },
+  "comparison_to_original": [
+    {"quantity": "AER Table 1 external-conflict c3 (printed anchor)", "original": "0.598 (0.241) *** [misattributed Table-2 value]", "followup": "0.029 (0.209), no stars", "source_file": "followup/001-001-living-update/results/anchors_printed.json (was); /workspace/inputs/paper.pdf p.1237 (true)", "note": "001-C2 misattribution corrected against the AER PDF"},
+    {"quantity": "AER Table 2 external-conflict row (printed anchors)", "original": "c1=0.555** , c2=0.762*** (two cells, out of order)", "followup": "c1 0.762(0.250)***, c2 0.598(0.241)***, c3 0.579(0.220)***, c4 0.555(0.162)***", "source_file": "/workspace/inputs/paper.pdf p.1238", "note": "001-C2 order fixed + SEs filled; 001-C5 fixes the 0.555** -> 0.555*** star in the summary"},
+    {"quantity": "001 R-legor verdicts (16-cell scorecard)", "original": "persists / persists / mixed(split) / persists ... (no attenuation arm run)", "followup": "identical verdict words; pooled attenuation arm now run and recorded as non-binding", "source_file": "followup/001-001-living-update/results/scorecard.csv (backup vs re-run)", "note": "001-C7: audit said the arm is non-binding - confirmed, all 16 words unchanged"},
+    {"quantity": "002 Q1 E2 low-income-half complementarity (common sample)", "original": "p=0.0736 (marginal), n=77, r=0.2151", "followup": "p=0.0395 (significant), n=71, r=0.2806", "source_file": "followup/002-002-theory-update/results/complementarity_by_era.csv (backup vs re-run)", "note": "002-C2: half_label dropped NaN-income countries from the low half; Q1 verdict unchanged (stable)"},
+    {"quantity": "002 Q1 verdict (slope-difference)", "original": "stable (E2-vs-E0 pooled diff p=0.220)", "followup": "stable (E2-vs-E0 pooled diff p=0.220)", "source_file": "followup/002-002-theory-update/results/verdicts.json", "note": "unchanged - the test is on the pooled sample, not the halves"}
+  ],
+  "artifacts": [
+    "results/card_corrections.csv",
+    "results/fig1_002C2_lowhalf_fix.png",
+    "results/fig2_001C7_legor_attenuation.png",
+    "report.md",
+    "result_card.json",
+    "followup_summary.json",
+    "workspace/code/verdicts_001_C7.py",
+    "workspace/code/estimate_002_C2.py",
+    "workspace/backups/ (all touched files, pre-correction)"
+  ],
+  "deviations": [
+    "Edited the two prior studies' files in place, as the instruction's deliverable requires ('corrected files in place'); kept full pre-correction backups under workspace/backups/. Did not touch /workspace/eval/replication/, analyze/, verify/, report/.",
+    "No separate AER PDF was staged; the AER published article is /workspace/inputs/paper.pdf (VOL. 99 NO. 4, Tables 1-2 pp.1237-1238), used as the printed-cell source of truth for 001-C2/C5.",
+    "001-C1: the WP (w13028) Tables 1-2 are the regional-fixed-effects (within) spec, so the cross-check is star-pattern evidence, not a cell-for-cell match; every suspect cell stays pending-deposit (Branch R). Stated on the surface."
+  ],
+  "remaining": []
+}

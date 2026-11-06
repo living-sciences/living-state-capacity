@@ -1,0 +1,71 @@
+{
+  "G1": {
+    "label": "parliamentary chain",
+    "rule": "agreement of BR(DD=0)&(e_polity2>0) vs Pillars 2 parl_dem, 1950-2016 overlap; and BR(DD=0)&(LIED>=4) vs same",
+    "threshold": ">= 0.99 and kappa >= 0.97; >= 0.985 and kappa >= 0.96 [PREVIEW-CALIBRATED: 0.9982/k0.9942 (n=8,355); 0.9939/k0.9802 (n=8,369)]",
+    "computed": {
+      "agree_polity": 0.9983,
+      "kappa_polity": 0.9943,
+      "n_polity": 8710,
+      "agree_lied": 0.9942,
+      "kappa_lied": 0.9804,
+      "n_lied": 8724
+    },
+    "pass": true,
+    "fail_branch": "parliamentary extension ends 2016 (parl_dem only); stated on card"
+  },
+  "G2": {
+    "label": "democracy chain",
+    "rule": "agreement of (LIED>=4) vs (e_polity2>0), 1950-2018",
+    "threshold": ">= 0.90 and kappa >= 0.80 [PREVIEW-CALIBRATED: 0.9245/k0.8493 (n=9,533)]",
+    "computed": {
+      "agree": 0.9245,
+      "kappa": 0.8493,
+      "n": 9533
+    },
+    "pass": true,
+    "fail_branch": "democracy extension ends 2018"
+  },
+  "G3": {
+    "label": "war splice",
+    "rule": "country-year external-war dummy agreement, COW v4 vs UCDP type 1+2 splice, 1946-2006 overlap",
+    "threshold": ">= 0.95 [SPEC-DECLARED, no preview. Reference note, not a preview: the Pillars-2 codebook's reported 0.984 is the CIVIL-war dummy's vintage-update agreement (old Pillars vintage vs its UCDP-19.1 recreation, internal conflict) - a same-source-family reference on a different conflict type, not an external-war COW-vs-UCDP cross-source quantity]",
+    "computed": {
+      "agree": 0.9765,
+      "n": 14518
+    },
+    "pass": true,
+    "fail_branch": "X2 column not built; X1 (avg_war00) unaffected"
+  },
+  "G4": {
+    "label": "credit splice",
+    "rule": "corr(GFDD di01, WDI FS.AST.PRVT.GD.ZS), 2000-2021 overlap, pooled",
+    "threshold": ">= 0.90 [SPEC-DECLARED, no preview]",
+    "computed": {
+      "corr": 0.9295,
+      "n": 3489
+    },
+    "pass": true,
+    "fail_branch": "Y1 stays 2000-2021 (GFDD only); the WDI-extended sensitivity is dropped, stated"
+  },
+  "G5": {
+    "label": "frame sanity",
+    "rule": "per-column N >= 80 after merge; X0 vs Phase-1 X agreement = exact on Branch D",
+    "threshold": "N>=80 per column; expected N ~ 150-190",
+    "computed": {
+      "col_N_within_legalorigin_frame": {
+        "Y1": 177,
+        "Y4": 197,
+        "Y5": 167,
+        "Y6": 158,
+        "Y7": 176,
+        "Y8": 174,
+        "Y9": 179,
+        "Y10": 181
+      }
+    },
+    "pass": true,
+    "fail_branch": "a column under N=80 grades not separable (coverage), never silently dropped",
+    "branch_note": "Branch R: deposit pending, X0-vs-Phase-1 exactness check N/A (no Phase-1 reconstruction estimate file on disk)"
+  }
+}

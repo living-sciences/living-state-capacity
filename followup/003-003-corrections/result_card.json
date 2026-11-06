@@ -1,0 +1,85 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "Applied all 12 bounded audit-conformance corrections to studies 001 and 002 in place with ZERO verdict-word changes: the only two numbers that reached a printed surface shipped as TRUE values with errata — 002's E2 low-income-half complementarity is clean p=0.0395 (significant, was 0.074 marginal) after a half_label fix, and 001's R-legor pooled attenuation arm was implemented, run, and confirmed non-binding.",
+  "status": "completed",
+  "metrics": [
+    {
+      "label": "Corrections applied",
+      "value": "12 / 12",
+      "baseline": "0 (pre-correction)",
+      "baseline_label": "audit list (001 C1-C8, 002 C1-C4)",
+      "note": "edited in place; every old->new in results/card_corrections.csv"
+    },
+    {
+      "label": "Verdict words changed",
+      "value": "0",
+      "baseline": "0 required",
+      "baseline_label": "binding framing rule 'no verdict word changes'",
+      "note": "001 scorecard all 16 verdict words identical; 002 Q1/Q2/Q3 unchanged"
+    },
+    {
+      "label": "002-C2 E2 low-half complementarity p (common sample)",
+      "value": "0.0395 (significant)",
+      "baseline": "0.0736 (marginal)",
+      "baseline_label": "002 complementarity_by_era.csv (pre-fix)",
+      "note": "half_label fix drops missing-income countries from the half; n 77->71; Q1 verdict unchanged (stable)"
+    },
+    {
+      "label": "001-C7 R-legor pooled attenuation arm",
+      "value": "non-binding (atten=False on 3/4 cells; True cell is mixed-split)",
+      "baseline": "arm not present",
+      "baseline_label": "001 verdicts.py (pre-fix)",
+      "note": "pooled median std beta vs half-anchor 0.099; audit said non-binding - confirmed"
+    },
+    {
+      "label": "001-C2 printed anchors corrected (vs AER PDF)",
+      "value": "T1 war c3/c4, T2 war c1-c4, SEs, 2 pending-deposit tags",
+      "baseline": "misattributed / null / out-of-order / SE=0.0",
+      "baseline_label": "paper.pdf pp.1237-1238",
+      "note": "e.g. T1 c3 0.598*** -> 0.029 ns; T2 war reordered to 0.762/0.598/0.579/0.555"
+    }
+  ],
+  "tables": [
+    {
+      "title": "002-C2 erratum: E2 low-income-half complementarity (common sample)",
+      "columns": ["Quantity", "Before (contaminated)", "After 002-C2 fix"],
+      "rows": [
+        ["n", "77", "71"],
+        ["std. slope r", "0.2151", "0.2806"],
+        ["HC1 p", "0.0736 (marginal)", "0.0395 (significant)"],
+        ["Q1 verdict", "stable", "stable (unchanged)"]
+      ],
+      "highlight_row": 2
+    },
+    {
+      "title": "001-C1 WP (w13028, regional-FE spec) cross-check of suspect cells",
+      "columns": ["Suspect cell", "Merited vs printed", "WP stars", "Reading"],
+      "rows": [
+        ["T1 c2 external conflict", "*** vs **", "*** (0.676, SE=0.191)", "agrees-merited"],
+        ["T2 c3 German LO", "*** vs *", "*** (0.295)", "agrees-merited"],
+        ["T2 c4 German LO", "none vs ***", "*** (0.206)", "coef 0.010 likely the misprint"],
+        ["fn17 war s.d.", "0.073 suspected", "WP also prints 0.73", "recurs, uncorrected"]
+      ],
+      "highlight_row": 0
+    }
+  ],
+  "figures": [
+    {
+      "file": "results/fig1_002C2_lowhalf_fix.png",
+      "caption": "002-C2: low-income-half legal-fiscal complementarity (standardized slope r, common sample) by era, before (gray squares, n=77, missing-income countries wrongly in the low half) vs after the half_label fix (orange circles, n=71). Fisher 95% CIs. E2 moves from marginal (p=0.074, CI touching zero) to significant (p=0.0395, CI above zero); the Q1 'stable' verdict is unchanged because the slope-difference test runs on the pooled sample.",
+      "alt": "Point-and-error-bar plot over three eras, gray before vs orange after; E0 overlapping and low, E1 higher, E2 orange CI clearly above zero while the gray E2 CI touches zero"
+    },
+    {
+      "file": "results/fig2_001C7_legor_attenuation.png",
+      "caption": "001-C7: the R-legor pooled attenuation arm is non-binding. Bars show the pooled German+Scandinavian median |standardized beta| for the four (generation x variant) cells against the attenuation threshold (dashed, 0.099 = half the paper-era pooled anchor 0.198, dotted). Only X0-within falls below the threshold (orange), but that cell is 'mixed (split)' so the joint-persists bound never passes and the attenuation clause does not fire; all 16 scorecard verdict words are unchanged.",
+      "alt": "Bar chart of four cells; three green bars above a dashed threshold line labelled persists, one orange bar just below it labelled mixed (split), atten=True, non-binding"
+    }
+  ],
+  "notes": [
+    "No verdict word changed on any surface (binding rule). The two numbers that reached a printed surface shipped as TRUE values with errata: 002's E2 low-half p (half_label fix) and 001's corrected printed AER anchors (verified against /workspace/inputs/paper.pdf pp.1237-1238).",
+    "001-C1: the WP cross-check was filled from the real NBER w13028 (2007) PDF, Tables 1-2 (pp.40-41). The WP tables are the regional-fixed-effects (within-region) spec, so this is star-pattern EVIDENCE, not a cell-for-cell replication of the between-region AER tables; every suspect cell stays pending-deposit (Branch R, deposit behind the human gate). Nothing is adjudicated or upgraded.",
+    "Corrective study: edited the two prior studies' files in place (the instruction's deliverable is 'corrected files in place'); full pre-correction backups kept under workspace/backups/. /workspace/eval/replication/, analyze/, verify/, report/ were not touched.",
+    "Full old->new ledger for all 12 corrections: results/card_corrections.csv."
+  ],
+  "report_file": "report.md"
+}

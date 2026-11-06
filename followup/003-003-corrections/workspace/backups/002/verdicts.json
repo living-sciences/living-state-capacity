@@ -1,0 +1,74 @@
+{
+  "Q1": {
+    "verdict": "stable",
+    "basis": "slope-diff not significant (p=0.220)",
+    "common_sample_N": 148,
+    "pooled_slopes_common": {
+      "E0": {
+        "slope": 0.0008152432345524843,
+        "se": 0.00017008930137461738,
+        "p": 1.6428051552313104e-06,
+        "n": 148
+      },
+      "E1": {
+        "slope": 0.0007433766422181277,
+        "se": 0.00010713270223043475,
+        "p": 3.953335350054791e-12,
+        "n": 148
+      },
+      "E2": {
+        "slope": 0.0005565698889707114,
+        "se": 0.00012459000293690424,
+        "p": 7.9245788932766e-06,
+        "n": 148
+      }
+    },
+    "E2_halves_common": {
+      "low": {
+        "slope": 0.00023893570511441338,
+        "se": 0.00013353791174067743,
+        "p": 0.07357095035696284,
+        "n": 77
+      },
+      "high": {
+        "slope": 0.0005917897001916132,
+        "se": 0.0001888762011261661,
+        "p": 0.0017290288493540292,
+        "n": 71
+      }
+    },
+    "stacked_diff_E2_vs_E0_credit_common": {
+      "diff_E2_minus_E0": -0.00025867334558177376,
+      "se": 0.00021083889412042362,
+      "p": 0.2198689034062663,
+      "n": 296,
+      "slope_E0": 0.0008152432345524853,
+      "slope_E2": 0.0005565698889707115
+    },
+    "method": "stacked OLS + credit x E2 interaction, HC1 (gates A5)"
+  },
+  "Q2": {
+    "gradeable": {
+      "Hanson_Sigman_2000_2015": true,
+      "VDem_v2xcl_prpty_2000_2025": true,
+      "mcollective16_2016": false
+    },
+    "merged_N": {
+      "Hanson_Sigman_2000_2015": 133,
+      "VDem_v2xcl_prpty_2000_2025": 134,
+      "mcollective16_2016": 63
+    },
+    "mcollective16_index_N": 67
+  },
+  "Q3": {
+    "verdict": "direction only (vintage mismatch)",
+    "basis": "2010 count 15 NOT within +/-3 of DP16256's 7; grade direction only",
+    "counts": {
+      "2000": 27,
+      "2010": 15,
+      "2023": 6
+    },
+    "reproduce_ok": false,
+    "dp16256_2010_count": 7
+  }
+}

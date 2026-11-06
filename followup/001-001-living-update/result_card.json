@@ -1,0 +1,106 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "Re-estimated on 2000-2024 successor data with the paper's own 1816-2000 war history (X1, the designated headline estimate), the external-war correlate PERSISTS between regions (significant in all 8 outcomes, standardized beta 0.24 vs 0.19 in the paper's era) but WEAKENS within regions (3/8); on the paper's own pre-1975 reconstruction, X0 between: weakens (3/8), reconstruction-degraded (corr 0.61 with the authors' avg_war00); legal origin persists, parliamentary democracy weakens, and democracy becomes a new out-of-sample predictor.",
+  "status": "completed",
+  "metrics": [
+    {
+      "label": "R-war grid (X1, p<0.05 of 8)",
+      "value": "8/8 between, 3/8 within",
+      "baseline": "printed sign in all 8 (AER T1/T2)",
+      "baseline_label": "AER 2009 pp.1237-1238 (printed; Branch R, pending-deposit)",
+      "note": "persists between regions, weakens within (paper's own fn-20 pattern)"
+    },
+    {
+      "label": "War std beta, income-tax/GDP (Y9)",
+      "value": "0.237",
+      "baseline": "0.207",
+      "baseline_label": "paper-era reconstruction (X0, 1980-2000; pending-deposit)",
+      "note": "undiminished out of sample"
+    },
+    {
+      "label": "R-parl verdict (X1 between)",
+      "value": "weakens (4/8)",
+      "baseline": "sig in 4 paper columns",
+      "baseline_label": "AER 2009 (printed)",
+      "note": "positive sign all 8, significance short of persists"
+    },
+    {
+      "label": "R-legor German+Scandinavian (X1 between)",
+      "value": "persists (7/8, 8/8)",
+      "baseline": "German & Scand positive (printed)",
+      "baseline_label": "AER 2009 (printed)",
+      "note": "most durable correlate on the successor battery"
+    },
+    {
+      "label": "Succession gates G1-G5",
+      "value": "5/5 pass",
+      "baseline": "preview-calibrated thresholds",
+      "baseline_label": "spec I.2 (G2 reproduces 0.9245/k0.8493 exactly)",
+      "note": "X1 democracy & parliamentary extend to 2024; X2 built (descriptive)"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Verdict grid (8 outcomes x variant x generation)",
+      "columns": [
+        "Row",
+        "X0 between",
+        "X0 within",
+        "X1 between",
+        "X1 within"
+      ],
+      "rows": [
+        [
+          "R-war",
+          "weakens (3/8)",
+          "weakens (2/8)",
+          "persists (8/8)",
+          "weakens (3/8)"
+        ],
+        [
+          "R-parl",
+          "weakens (0/8)",
+          "weakens (2/8)",
+          "weakens (4/8)",
+          "weakens (3/8)"
+        ],
+        [
+          "R-legor (Ger+Scand)",
+          "persists",
+          "mixed (split)",
+          "persists",
+          "persists"
+        ],
+        [
+          "R-dem (vs null)",
+          "new pattern (7/8)",
+          "null (0/8)",
+          "new pattern (6/8)",
+          "new pattern (5/8)"
+        ]
+      ],
+      "highlight_row": 0
+    }
+  ],
+  "figures": [
+    {
+      "file": "results/fig_war_coefficients.png",
+      "caption": "Standardized war coefficient across the 8 successor outcomes (X1 history, avg_war00 1816-2000). Between-regions bars (orange) sit at/above the paper-era anchor and are all significant; within-regions (blue) collapse below it. Black-edged bars: p<0.05 (HC1).",
+      "alt": "Grouped bar chart of standardized war coefficients for eight outcome columns, orange between-regions bars tall and significant, blue within-regions bars short, dashed line at the paper-era anchor 0.19"
+    },
+    {
+      "file": "results/fig1_update.png",
+      "caption": "Figure 1 update (descriptive): private credit/GDP (2000-2021) vs income-tax/GDP (2000-2023), split at median income. Legal-fiscal co-movement persists (overall corr 0.57).",
+      "alt": "Scatter of income-tax/GDP against private-credit/GDP with two fitted lines for low- and high-income halves, both upward sloping"
+    }
+  ],
+  "notes": [
+    "Branch R (reconstruction; deposit pending): no AER.dta and no Phase-1 estimate file on disk, so paper-era anchors are the PRINTED cells and the 12-cell suspect set plus fn17 is reported pending-deposit (no typo adjudicated, no suspect-cell stars used as evidence).",
+    "Paper-era standardized anchors for the attenuation clause were reconstructed in-study (X0 spec on GFDD/V-Dem/GRD 1980-2000) because no Phase-1 estimate file exists; NBER w13028 WP not staged so the typo-table WP cross-check column is unavailable.",
+    "Doing Business was discontinued in September 2021 after data-irregularity findings; cols 2-3 (Y2/Y3) are bridge columns outside all verdict counts for that reason. Y6 (Hanson-Sigman) ends 2015. WGI rule of law (Y4) is partially ICRG-fed, so it is a successor to, not an independent check on, the paper's ICRG column; raw ICRG excluded (proprietary).",
+    "X2 (UCDP-spliced war to 2024) is descriptive (contemporaneous-war caveat) and never enters a verdict.",
+    "These are conditional cross-country correlations, exactly as the paper itself labels its evidence (pp. 1235, 1241); nothing here is causal, and no verdict below upgrades or downgrades the paper's causal claims, because it made none.",
+    "Novelty: the first re-estimation of the AER 2009 Tables 1-2 specification (external-war incidence 1816-1975 + democracy and parliamentary-democracy incidence to 1975 + legal origins, on the paper's outcome battery or its successors) on any post-publication data, and the first grading of those patterns out of sample (checked against the update's published do-files and dataset; literature search 2026-11-05)."
+  ],
+  "report_file": "report.md"
+}

@@ -1,0 +1,7 @@
+{
+  "policy": "staged data only (shared-data mirror of extension-assets), sha256-verified against sha256sums.txt",
+  "sha256_check": "57/57 files OK (sha256sum -c), 2026-11-06",
+  "in_run_rebranch_used": false,
+  "note": "ONE declared in-run branch (re-pull identical WDI API endpoint if staged WDI JSON fails to parse) was NOT triggered: all 7 staged WDI JSONs parsed cleanly.",
+  "live_endpoints_touched": "none (ICRG, umich, CEPR, openICPSR untouched)"
+}

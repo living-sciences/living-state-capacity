@@ -1,0 +1,47 @@
+{
+  "A1_sha256": {
+    "rule": "sha256sum -c sha256sums.txt over shared-data",
+    "computed": "57/57 OK",
+    "pass": true
+  },
+  "A2_locate_001": {
+    "rule": "reuse results/frame_update.csv read-only; else rebuild via same code path",
+    "frame_update.csv": "/workspace/eval/followup/001-001-living-update/results/frame_update.csv",
+    "frame_rows": 238,
+    "pass": true
+  },
+  "A3_grd_concept": {
+    "rule": "Merged sheet; Taxes excl SC (%GDP) col24; Income (%GDP) col32; Trade (%GDP) col48; same concept as 001 seam S1",
+    "computed": {
+      "rows_1980_2023": 8603,
+      "iso_codes": 196,
+      "taxes_pctGDP_nonnull": 6945,
+      "income_pctGDP_nonnull": 6086,
+      "trade_pctGDP_nonnull": 6147,
+      "trade_share_range_ok": true
+    },
+    "pass": true
+  },
+  "A4_coverage_count": {
+    "rule": "merged estimation N (composite + X0 war/dem/parl + 4 legal-origin dummies, non-missing) per Q2 composite; N>=80 -> verdicted column; N<80 -> not separable (coverage), reported descriptively with N on every surface",
+    "G5_floor": 80,
+    "computed_N": {
+      "Hanson_Sigman_Y6": 133,
+      "VDem_v2xcl_prpty_Y5": 134,
+      "mcollective16": 63
+    },
+    "grade": {
+      "Hanson_Sigman_Y6": "verdicted",
+      "VDem_v2xcl_prpty_Y5": "verdicted",
+      "mcollective16": "not separable (coverage)"
+    },
+    "note": "mcollective16 N=67 < 80 -> not separable (coverage) by the 001 G5 rule, as pre-declared in spec II.1(2); its estimates are still computed and reported descriptively with N=67 stated.",
+    "pass": true
+  },
+  "A5_q1_method": {
+    "choice": "stacked",
+    "spec": "Pooled STACKED OLS of era-mean income-tax(%GDP) on era-mean private credit, stacking the E0 and E2 country observations, with an E2 era dummy and a credit x E2 interaction; HC1 robust SEs. The interaction coefficient IS the E2-vs-E0 slope difference and its HC1 two-sided p-value is the slope-difference test used by Q1 verdict step 3. (Single-equation stack equivalent to the SUR cross-equation slope-equality test when the two eras share the regressor set; HC1 makes it heteroskedasticity-robust.)",
+    "decided_on": "common-sample variant (countries present in all three eras); full-sample reported beside it",
+    "pass": true
+  }
+}

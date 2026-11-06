@@ -1,0 +1,57 @@
+d82d63b3b7e22e047341042894fa25e268e2011a0bc27af72036e37c1c6597c1  ./bjornskov-rode/Bjornskov-Rode-integrated-dataset-v7.1.xlsx
+529c325fdf0355ea4e09ce1c0d13d3cb474eaffcfebe13576b7a56207b264104  ./cow/Extra-StateWarData_v4.0.csv
+2535e30b145141c331a07d12d91e498ad8bdd3db32ba8d3bd88c4fda54817731  ./cow/Inter-StateWarData_v4.0.csv
+95bce841cd858fcf32f74fda67bc786881de4e91e1db522c78fc93f15abb265e  ./doingbusiness/Historical-Data--DB04-DB20-.xlsx
+bb86ad8c15da875f094c9b23db69731570e7ffa1e14e22fb2c8ba2aef30884dc  ./gfdd/GFDD_sept2022.xlsx
+59a146f4206006f7f693988209698f4ae9fb824910827ebdc29cb5705db2e8cf  ./grd/UNUWIDERGRD_2025.xlsx
+59ae449c7dbd4e710b6baa477ee73b79227c9c695ef2e93916edff3e898b28a3  ./grd/User_Guide_2025.pdf
+4772f4e90c5a41ea2172c8fe74a470c7f11246f34d0e6775be43ce74bcf61aa9  ./hanson-sigman/cross-sectional-table5.dta
+072a823f0b17907f3b042fbf5e5cb3d36302a2e167b6a17ddc88ac1da831e9e9  ./hanson-sigman/HansonSigman_source.dta
+ab6f36961fecaed44a789af4977da71c0fcd5008c9d6359eba115dd28f6aa8c9  ./hanson-sigman/owid_state_capacity_index.csv
+3d9d48585341a7da9f44004a38e6d1c23f7aec475bffe43c8744bba239adef85  ./hanson-sigman/owid_state_capacity_index.metadata.json
+5348dab89da424519d1fc59720891de6d882a92c2fe579431e329c7b05d46a8e  ./legal-origins/qog_std_cs_jan21.csv
+e94e3edb424d3fb51da993c2a54c9a5a9c552334482894269de78178142d2979  ./pillars/2011/codebook.pdf
+81ef8d38db571f1eae57d4e2d43e6663826c69371eb896a3f6fc6025f7fc50e2  ./pillars/2011/dofiles/Ch_1.do
+14704bb6d1ce9546847f1178e00c0813bd9ab871ee33381b18b4c7b5d671c585  ./pillars/2011/dofiles/Ch_2.do
+f9b9ff09555086614458d0589604b30df929c68b3b07ede864239e67cf864538  ./pillars/2011/dofiles/Ch_3.do
+f449457a5053787ac3a5691221e6ee77af52e8fd35d29284e26cf0b79e18c8ac  ./pillars/2011/dofiles/Ch_4.do
+e6d3a48704f7043761156fd90097dcb3788b570bb3f0e655c2394fda0f4ec9f8  ./pillars/2011/dofiles/Ch_5.do
+18f6f27da66d7df4331ead9f740b3528ea81aea9864f062a6e8b56cc49ec9c83  ./pillars/2011/dofiles/Ch_6.do
+96f88dac7b7b195c380aae3929216acbda78a36c2467617fa68af583305dd04a  ./pillars/2011/dofiles/Ch_7.do
+c9d6971a84a85c2916c4d6bfacd77c65286cbe09cdf0b598521d94ace1318cba  ./pillars/2011/dofiles/Ch_8.do
+0f4fa3c278143ef61f42a0cadaed8a855fc773e7d66a598bd7b3bff6033ffdff  ./pillars/2011/do-files.zip
+9b543911ef36087031120334577ed75d13abdc4d04790eef20546d9fb451cb43  ./pillars/2011/Pillars.dta
+dd5a527107678429842c88faddd55939740e60273082c109fa2ae6e5ad48389b  ./pillars/2011/Pillars.zip
+7deae4c35e4c9d68d7b812f83c345df1514dd54a2f0d83cd111300ba3065c517  ./pillars/2021/dofiles/Chapter 1 .do
+441887bad8a08759757f61e801aca5997293a6e7f556f08f0d0f79f8e4cb9220  ./pillars/2021/dofiles/Chapter 2.do
+08b6487a05878a5e4c4f890ecd8021593e64f2b8cfb9acd909b532b8ed5528fa  ./pillars/2021/dofiles/Chapter 3.do
+1af4568c0d0e10f24c8627be5ecaf86799d96cbc8630c72b71fa335af57ee66d  ./pillars/2021/dofiles/Chapter 4.do
+322088610db232b17ca58c9ab118dfc79605238570e47953799b82e51d8ff28d  ./pillars/2021/dofiles/Chapter 8 cluster analysis/1990 clustering.R
+026d9b3451066c2178e05a20b4944182ca3c004af992cb84a037bd9c3093d3bc  ./pillars/2021/dofiles/Chapter 8 cluster analysis/1990 index components.dta
+519e30acc23257001c97217d435a12837a5bb155e44f7ce213e890f8afa0e9ec  ./pillars/2021/dofiles/Chapter 8 cluster analysis/2000 clustering.R
+3d7f9b232407871ea2890dd100f06b12c8fe8c5f5debd58a65325e7029185976  ./pillars/2021/dofiles/Chapter 8 cluster analysis/2000 index components.dta
+97dcb7fd3a7fdf57eedda61a8055e101dbc2fa5dcc91a360492a2edae16dc745  ./pillars/2021/dofiles/Chapter 8 cluster analysis/2016 clustering.R
+36729416c2c1f64cb19016ddd06be02e300f9d2fa07adc97fb5146d9fd9471ff  ./pillars/2021/dofiles/Chapter 8 cluster analysis/2016 index components.dta
+42d63d637be7dd29f59f8f844f429a177104975e957e80a79722b914adf9772c  ./pillars/2021/dofiles/Chapter 8.do
+273d437e5a295e7e6d5061414936a935ebb6813e0947445c46c0a2d990a526ec  ./pillars/2021/dofiles/Chapters 5, 6 and 7.do
+90fa0d2770b41fe1ed08b9d052a627e4b3e7a7b96fdd74e9dc17b6b5a2b23fd1  ./pillars/2021/dofiles/Working paper table 7/data_table_7.dta
+c377a8183bca4edf7b0a02e51914f1d9935325f8029d6fe0f8443b395c1a3be0  ./pillars/2021/dofiles/Working paper table 7/Table 7 creation.do
+fd460f55ea1ec41cfd28d2e92aaa81a14dbe80198ebf5c8d57327cbfd0e3e811  ./pillars/2021/do-files.zip
+f7c134c102aae353d32fce41fe6c44eccc8d5e4c63bcdd1d785a449a22677133  ./pillars/2021/pillars_2_codebook.pdf
+3af97bd922c76bdf3fc46813dc80ff884ca1cf20bcce89a6189e09d49c7206e8  ./pillars/2021/Pillars 2.dta
+e509b0dca42a24b72575677632b79491b173b317b8e41c7798071fa7dfe12301  ./pillars/2021/Pillars_2_dta.zip
+2a0d214958dd46ad6cb9966f5dfa2fc8ad546475c79ed70564caf7383777aaa1  ./pwt/pwt110.dta
+5f951743222964674a446e32a5a871077b29bd13349588d85fc59953d89c878a  ./ucdp/ucdp-prio-acd-261-csv.zip
+6d757183dd632d10d7287ee63493b1e632733f308b77220406dce7ceab664455  ./ucdp/ucdp-prio-acd-261.pdf
+2aea044f1bcae7b050bb6c79fb796743e787edeed3b90e74e146cfc4e5b05447  ./ucdp/UcdpPrioConflict_v26_1.csv
+d3c4130e1042b0ab37365658d7444444cdc5847fc8d9491cf5e08d5ffd4ac8d4  ./vdem/codebook_v16.pdf
+590b89e6f83d3bb5fe06d8da4651bfaa8eb14188f2d2b6f1dcbdcf48b31171e5  ./vdem/vdem_v16_extra_lied_uds.csv
+39b412d39a061c18f20c98e4ad4d6355b05a0441df31be4ee9aec420dc3d95ea  ./vdem/vdem_v16.RData
+bd5cdfdd3b7044af7b65285ac18a6536f12960c0471849f088093cdd9fb80ebc  ./wdi/wdi_FS.AST.PRVT.GD.ZS.json
+9216ccfa688ea7371843d689764c8fcb107d9769ce73e2de3d8f729e94efd61b  ./wdi/wdi_GC.TAX.GSRV.RV.ZS.json
+e59f3c2675c14b6c6c20f3b46859dce6f1b2dfa7559a6801ae1b4e6b8e47af8d  ./wdi/wdi_GC.TAX.INTT.RV.ZS.json
+f47e57cd22a5efac50650dd74f7039d20836dbe851dc349e008befcb1838a99d  ./wdi/wdi_GC.TAX.TOTL.GD.ZS.json
+bfd8de6ea27bd04801c3d63e0d67644e0b1fb50f36df55f27f4f2589ea1d6a8d  ./wdi/wdi_GC.TAX.YPKG.RV.ZS.json
+a761f810f28131376101f0e3048592e24385e0e0658e6c206e2c783dbf325f20  ./wdi/wdi_NY.GDP.PCAP.KD.json
+7ae3e8c291e97db344344650f591944d20a9a2ae9c23179d8634001190438454  ./wdi/wdi_NY.GDP.PCAP.PP.KD.json
+67c38d2e9253fb1a72ee302c3b7c47b2ba7b177a04673163796ca1666f506ecb  ./wgi/wgidataset_with_sourcedata-2026.xlsx

@@ -1,0 +1,17 @@
+row,generation,variant,verdict,phrase,nsign,nsig_sign,nlegal_sig,nfiscal_sig,nopp_sig,median_std_beta,paper_era_std_anchor,attenuated_half,basis,seams
+R-war,X0,between,weakens,,8.0,3.0,0.0,3.0,0.0,0.1897,0.1944,False,"3/8 sign&p<.05 (0 legal,3 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-war,X0,within,weakens,,6.0,2.0,0.0,2.0,0.0,0.0402,0.1944,True,"2/8 sign&p<.05 (0 legal,2 fiscal); 6/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-war,X1,between,persists,,8.0,8.0,4.0,4.0,0.0,0.2374,0.1944,False,"8/8 sign&p<.05 (4 legal,4 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-war,X1,within,weakens,,8.0,3.0,1.0,2.0,0.0,0.0925,0.1944,True,"3/8 sign&p<.05 (1 legal,2 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-parl,X0,between,weakens,,8.0,0.0,0.0,0.0,0.0,0.0829,0.1083,False,"0/8 sign&p<.05 (0 legal,0 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-parl,X0,within,weakens,,8.0,2.0,1.0,1.0,0.0,0.1097,0.1083,False,"2/8 sign&p<.05 (1 legal,1 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-parl,X1,between,weakens,,8.0,4.0,2.0,2.0,0.0,0.131,0.1083,False,"4/8 sign&p<.05 (2 legal,2 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-parl,X1,within,weakens,,8.0,3.0,1.0,2.0,0.0,0.1073,0.1083,False,"3/8 sign&p<.05 (1 legal,2 fiscal); 8/8 paper-sign",S1(GRD) S4(WGI/ICRG) 
+R-dem,X0,between,new out-of-sample pattern,7/8 newly positive & significant,,7.0,,,,0.2664,,,7/8 newly positive & significant,graded vs null (paper democracy row is null-to-weak)
+R-dem,X0,within,persists (stays null-to-weak),8/8 insignificant,,0.0,,,,0.0896,,,8/8 insignificant,graded vs null (paper democracy row is null-to-weak)
+R-dem,X1,between,new out-of-sample pattern,6/8 newly positive & significant,,6.0,,,,0.298,,,6/8 newly positive & significant,graded vs null (paper democracy row is null-to-weak)
+R-dem,X1,within,new out-of-sample pattern,5/8 newly positive & significant,,5.0,,,,0.192,,,5/8 newly positive & significant,graded vs null (paper democracy row is null-to-weak)
+R-legor,X0,between,persists,"German=persists, Scandinavian=persists",,,,,,,,,"German 6/8 sig, Scand 8/8 sig",joint German+Scandinavian row
+R-legor,X0,within,"mixed (split: German weakens, Scandinavian persists)","German=weakens, Scandinavian=persists",,,,,,,,,"German 2/8 sig, Scand 5/8 sig",joint German+Scandinavian row
+R-legor,X1,between,persists,"German=persists, Scandinavian=persists",,,,,,,,,"German 7/8 sig, Scand 8/8 sig",joint German+Scandinavian row
+R-legor,X1,within,persists,"German=persists, Scandinavian=persists",,,,,,,,,"German 4/8 sig, Scand 6/8 sig",joint German+Scandinavian row
